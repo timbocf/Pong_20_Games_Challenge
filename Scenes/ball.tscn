@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bpogy70lgfycv"]
+
+[ext_resource type="Texture2D" uid="uid://r6pn7e4ubv2a" path="res://Sprites/pong_ball.png" id="1_d60mj"]
+[ext_resource type="Script" uid="uid://dkfjv6xpf6wkv" path="res://Scripts/ball.gd" id="1_ij5cq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpnjs"]
+size = Vector2(6, 6)
+
+[node name="Ball" type="CharacterBody2D" unique_id=521560745]
+motion_mode = 1
+script = ExtResource("1_ij5cq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234019374]
+texture = ExtResource("1_d60mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630471186]
+shape = SubResource("RectangleShape2D_jpnjs")

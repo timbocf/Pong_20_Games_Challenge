@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://kqgmsd5jf17b"]
+
+[ext_resource type="PackedScene" uid="uid://bpogy70lgfycv" path="res://Scenes/ball.tscn" id="1_3dryh"]
+[ext_resource type="Script" uid="uid://edgr0hfiaufp" path="res://Scenes/game.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://chb8odkvx1y54" path="res://Scenes/player_left.tscn" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://dhaauh12fb0ej" path="res://Scenes/player_right.tscn" id="2_3dryh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpnjs"]
+size = Vector2(642, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3m7ip"]
+size = Vector2(47, 478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdbhx"]
+size = Vector2(50, 476)
+
+[node name="Game" type="Node2D" unique_id=767584540]
+script = ExtResource("1_wowpa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1645328718]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.61542195, 0.61542195, 0.61542195, 1)
+
+[node name="Player Left" parent="." unique_id=109249110 instance=ExtResource("1_wrm1d")]
+position = Vector2(24, 96)
+
+[node name="Player Right" parent="." unique_id=726803859 instance=ExtResource("2_3dryh")]
+position = Vector2(616, 154)
+
+[node name="Ball" parent="." unique_id=521560745 instance=ExtResource("1_3dryh")]
+position = Vector2(42, 120)
+
+[node name="Top Wall" type="StaticBody2D" parent="." unique_id=618554401]
+position = Vector2(118, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall" unique_id=47645162]
+position = Vector2(202, -13)
+shape = SubResource("RectangleShape2D_jpnjs")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="." unique_id=298315102]
+position = Vector2(0, 505)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=1409876927]
+position = Vector2(320, -11)
+shape = SubResource("RectangleShape2D_jpnjs")
+
+[node name="Left Boundary" type="Area2D" parent="." unique_id=1943765514]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Boundary" unique_id=2079467207]
+position = Vector2(-24.5, 240)
+shape = SubResource("RectangleShape2D_3m7ip")
+
+[node name="Right Boundary" type="Area2D" parent="." unique_id=882501230]
+position = Vector2(650, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Boundary" unique_id=50869076]
+position = Vector2(15, 228)
+shape = SubResource("RectangleShape2D_cdbhx")
+
+[node name="Left Score Label" type="Label" parent="." unique_id=897596790]
+offset_left = 90.0
+offset_top = 16.0
+offset_right = 103.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Right Score Label" type="Label" parent="." unique_id=1949806515]
+offset_left = 448.0
+offset_top = 14.0
+offset_right = 465.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Left Score Heading" type="Label" parent="." unique_id=1791331945]
+offset_left = 34.0
+offset_top = 16.0
+offset_right = 74.0
+offset_bottom = 39.0
+text = "LEFT:"
+
+[node name="Right Score Heading" type="Label" parent="." unique_id=1827791554]
+offset_left = 377.0
+offset_top = 14.0
+offset_right = 430.0
+offset_bottom = 37.0
+text = "RIGHT:"
+
+[node name="Start Game Label" type="Label" parent="." unique_id=738227557]
+offset_left = 137.0
+offset_top = 226.0
+offset_right = 505.0
+offset_bottom = 257.0
+theme_override_font_sizes/font_size = 22
+text = "Press Spacebar to start the game..."
+
+[connection signal="body_entered" from="Left Boundary" to="." method="_on_left_boundary_body_entered"]
+[connection signal="body_entered" from="Right Boundary" to="." method="_on_right_boundary_body_entered"]

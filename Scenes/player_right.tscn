@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dhaauh12fb0ej"]
+
+[ext_resource type="Script" uid="uid://dft0chuvsafkr" path="res://Scripts/player_right.gd" id="1_le51c"]
+[ext_resource type="Texture2D" uid="uid://b44xvthmph364" path="res://Sprites/pong_player.png" id="2_ldefx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpnjs"]
+size = Vector2(4, 80)
+
+[node name="Player" type="StaticBody2D" unique_id=840676901]
+script = ExtResource("1_le51c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1887473392]
+texture = ExtResource("2_ldefx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=338073753]
+shape = SubResource("RectangleShape2D_jpnjs")
