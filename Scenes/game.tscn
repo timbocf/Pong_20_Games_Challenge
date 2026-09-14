@@ -29,7 +29,7 @@ position = Vector2(24, 96)
 position = Vector2(616, 154)
 
 [node name="Ball" parent="." unique_id=521560745 instance=ExtResource("1_3dryh")]
-position = Vector2(42, 120)
+position = Vector2(114, 94)
 
 [node name="Top Wall" type="StaticBody2D" parent="." unique_id=618554401]
 position = Vector2(118, 0)

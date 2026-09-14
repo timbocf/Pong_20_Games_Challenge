@@ -16,7 +16,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if not game_started and event.is_action_pressed("start_game"):
 		game_started = true
-		start_label.visible = true
+		start_label.visible = false
 		ball.start_ball()
 
 func _on_left_boundary_body_entered(body: Node2D) -> void:
@@ -25,7 +25,7 @@ func _on_left_boundary_body_entered(body: Node2D) -> void:
 	right_score_label.text = str(right_player_score)
 	print("Right player scored! Score: ", right_player_score)
 	ball.reset_ball()
-
+	
 func _on_right_boundary_body_entered(body: Node2D) -> void:
 	print("TRIGGERED BY: ", body.name) # Add this line first
 	left_player_score += 1
