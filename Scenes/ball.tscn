@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://r6pn7e4ubv2a" path="res://Sprites/pong_ball.png" id="1_d60mj"]
 [ext_resource type="Script" uid="uid://dkfjv6xpf6wkv" path="res://Scripts/ball.gd" id="1_ij5cq"]
+[ext_resource type="AudioStream" uid="uid://bxnicfan0rtak" path="res://Sounds/pong-beep.wav" id="3_376qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpnjs"]
 size = Vector2(6, 6)
@@ -15,3 +16,6 @@ texture = ExtResource("1_d60mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1630471186]
 shape = SubResource("RectangleShape2D_jpnjs")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="." unique_id=1968217741]
+stream = ExtResource("3_376qj")

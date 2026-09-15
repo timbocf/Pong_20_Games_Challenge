@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var speed_multiplier: float = 1.05
 @export var max_speed: float = 1000.0
 
+@onready var hit_sound: AudioStreamPlayer2D = $HitSound
+
 func _ready() -> void:
 	reset_ball()
 
@@ -11,6 +13,10 @@ func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
+		
+		# Play the bounce sound on collision
+		hit_sound.play()
+		
 		var collider = collision.get_collider()
 		if collider.is_in_group("Paddles"):
 			var current_speed = velocity.length() * speed_multiplier
