@@ -12,11 +12,12 @@ func _physics_process(delta: float) -> void:
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		var collider = collision.get_collider()
-		if collider.is_in_group("paddles"):
+		if collider.is_in_group("Paddles"):
 			var current_speed = velocity.length() * speed_multiplier
 			current_speed = min(current_speed, max_speed)
 			
 			velocity = velocity.normalized() * current_speed	
+			print(current_speed)
 		
 func start_ball() -> void:
 	# Pick a random starting direction 
