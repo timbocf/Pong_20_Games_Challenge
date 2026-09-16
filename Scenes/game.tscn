@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://kqgmsd5jf17b"]
 
 [ext_resource type="PackedScene" uid="uid://bpogy70lgfycv" path="res://Scenes/ball.tscn" id="1_3dryh"]
-[ext_resource type="Script" uid="uid://edgr0hfiaufp" path="res://Scenes/game.gd" id="1_wowpa"]
+[ext_resource type="Script" uid="uid://edgr0hfiaufp" path="res://Scripts/game.gd" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://chb8odkvx1y54" path="res://Scenes/player_left.tscn" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://dhaauh12fb0ej" path="res://Scenes/player_right.tscn" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://yrsio8a4muwi" path="res://Scenes/PauseMenu.tscn" id="5_wowpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpnjs"]
 size = Vector2(642, 24)
@@ -96,6 +97,8 @@ offset_right = 505.0
 offset_bottom = 257.0
 theme_override_font_sizes/font_size = 22
 text = "Press Spacebar to start the game..."
+
+[node name="PauseMenu" parent="." unique_id=588960052 instance=ExtResource("5_wowpa")]
 
 [connection signal="body_entered" from="Left Boundary" to="." method="_on_left_boundary_body_entered"]
 [connection signal="body_entered" from="Right Boundary" to="." method="_on_right_boundary_body_entered"]

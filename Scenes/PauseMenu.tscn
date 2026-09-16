@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://yrsio8a4muwi"]
+
+[ext_resource type="Script" uid="uid://yv5a3b1bkj6c" path="res://Scripts/pause_menu.gd" id="1_lj4oq"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=588960052]
+process_mode = 2
+script = ExtResource("1_lj4oq")
+
+[node name="MenuUI" type="Control" parent="." unique_id=1784198682]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MenuUI" unique_id=1966808710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 0.003921569, 0.003921569, 0.5019608)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuUI" unique_id=733240204]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MenuUI/VBoxContainer" unique_id=1895616918]
+layout_mode = 2
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="MenuUI/VBoxContainer" unique_id=483243520]
+layout_mode = 2
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="MenuUI/VBoxContainer" unique_id=164363760]
+layout_mode = 2
+text = "Main Menu"
