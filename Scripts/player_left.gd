@@ -7,4 +7,4 @@ func _physics_process(delta: float) -> void:
 	position.y += direction * SPEED * delta
 	
 	# Keeps the paddle inside the window (adjust 50 and 590 to fit your screen height)
-	position.y = clamp(position.y, 50, 430)
+	position.y = clamp(position.y, 40, 440)

@@ -25,8 +25,9 @@ color = Color(0.61542195, 0.61542195, 0.61542195, 1)
 [node name="Player Left" parent="." unique_id=109249110 groups=["Paddles"] instance=ExtResource("1_wrm1d")]
 position = Vector2(24, 96)
 
-[node name="Player Right" parent="." unique_id=726803859 groups=["Paddles"] instance=ExtResource("2_3dryh")]
+[node name="Player Right" parent="." unique_id=726803859 node_paths=PackedStringArray("ball") groups=["Paddles"] instance=ExtResource("2_3dryh")]
 position = Vector2(616, 154)
+ball = NodePath("../Ball")
 
 [node name="Ball" parent="." unique_id=521560745 instance=ExtResource("1_3dryh")]
 position = Vector2(114, 94)
