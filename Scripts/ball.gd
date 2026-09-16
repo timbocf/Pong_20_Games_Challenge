@@ -59,6 +59,7 @@ func start_ball() -> void:
 	velocity = Vector2(cos(random_angle), sin(random_angle)) * initial_speed
 
 func reset_ball(serve_left: bool = true) -> void:
+	current_speed = initial_speed
 	global_position = get_viewport_rect().size / 2.0
 	
 	var x_dir = -1.0 if serve_left else 1.0
