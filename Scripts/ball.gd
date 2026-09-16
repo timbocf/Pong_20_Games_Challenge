@@ -11,7 +11,7 @@ var current_speed: float
 
 func _ready() -> void:
 	current_speed = initial_speed
-	velocity = Vector2([-1, 1].pick_random(), randf_range(-0.5, 0.5)).normalized() * current_speed
+	# velocity = Vector2([-1, 1].pick_random(), randf_range(-0.5, 0.5)).normalized() * current_speed
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
@@ -58,14 +58,8 @@ func start_ball() -> void:
 		random_angle += PI
 	velocity = Vector2(cos(random_angle), sin(random_angle)) * initial_speed
 
-func reset_ball(serve_left: bool = true) -> void:
+func reset_ball() -> void:
 	current_speed = initial_speed
 	global_position = get_viewport_rect().size / 2.0
-	
-	var x_dir = -1.0 if serve_left else 1.0
-	var y_dir = randf_range(-0.5, 0.5)
-	
-	velocity = Vector2(x_dir, y_dir).normalized() * initial_speed
-	
-	# uncomment the next line if you want to have the player press spacebar after every point
-	# velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
+		

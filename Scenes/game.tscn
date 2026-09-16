@@ -99,6 +99,7 @@ theme_override_font_sizes/font_size = 22
 text = "Press Spacebar to start the game..."
 
 [node name="PauseMenu" parent="." unique_id=588960052 instance=ExtResource("5_wowpa")]
+process_mode = 3
 
 [connection signal="body_entered" from="Left Boundary" to="." method="_on_left_boundary_body_entered"]
 [connection signal="body_entered" from="Right Boundary" to="." method="_on_right_boundary_body_entered"]

@@ -13,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="ColorRect" type="ColorRect" parent="MenuUI" unique_id=1966808710]
 layout_mode = 1
@@ -49,3 +50,11 @@ text = "Resume"
 [node name="MainMenuButton" type="Button" parent="MenuUI/VBoxContainer" unique_id=164363760]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="MenuUI/VBoxContainer" unique_id=706328303]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MenuUI/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MenuUI/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="MenuUI/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -19,16 +19,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		start_label.visible = false
 		ball.start_ball()
 
-func _on_left_boundary_body_entered(body: Node2D) -> void:
-	print("TRIGGERED BY: ", body.name) # Add this line first
+func _on_left_boundary_body_entered(_body: Node2D) -> void:
 	right_player_score += 1
 	right_score_label.text = str(right_player_score)
-	print("Right player scored! Score: ", right_player_score)
 	ball.reset_ball()
+	game_started = false
+	start_label.visible = true
 	
-func _on_right_boundary_body_entered(body: Node2D) -> void:
-	print("TRIGGERED BY: ", body.name) # Add this line first
+func _on_right_boundary_body_entered(_body: Node2D) -> void:
 	left_player_score += 1
 	left_score_label.text = str(left_player_score)
-	print("Left Player scored! Score: Left ", left_player_score, " - Right ", right_player_score)
 	ball.reset_ball()
+	game_started = false
+	start_label.visible = true

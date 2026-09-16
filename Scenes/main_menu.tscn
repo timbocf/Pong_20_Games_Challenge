@@ -45,6 +45,5 @@ grow_vertical = 2
 layout_mode = 2
 text = "PONG"
 
-[connection signal="pressed" from="OnePlayerButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="OnePlayerButton" to="." method="_on_one_player_button_pressed"]
 [connection signal="pressed" from="TwoPlayerButton" to="." method="_on_two_player_button_pressed"]
